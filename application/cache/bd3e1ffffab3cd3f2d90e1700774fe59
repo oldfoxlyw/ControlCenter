@@ -1,0 +1,190 @@
+1320378442TS---><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>SCC后台管理系统 - 运维管理中心首页</title>
+		<!--                       CSS                       -->
+		<!-- Reset Stylesheet -->
+		<link rel="stylesheet" href="/ControlCenter/resources/css/reset.css" type="text/css" media="screen" />
+		<!-- Main Stylesheet -->
+		<link rel="stylesheet" href="/ControlCenter/resources/css/style.css" type="text/css" media="screen" />
+		<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+		<link rel="stylesheet" href="/ControlCenter/resources/css/invalid.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/ControlCenter/resources/css/prompt_style.css" type="text/css" media="screen" />
+		<!-- Colour Schemes
+		Default colour scheme is green. Uncomment prefered stylesheet to use it.
+		<link rel="stylesheet" href="/ControlCenter/resources/css/blue.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/ControlCenter/resources/css/red.css" type="text/css" media="screen" />  
+		-->
+		<!-- Internet Explorer Fixes Stylesheet -->
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" href="/ControlCenter/resources/css/ie.css" type="text/css" media="screen" />
+		<![endif]-->
+		<!--                       Javascripts                       -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="/ControlCenter/resources/scripts/jquery-1.5.1.min.js"></script>
+		<!-- jQuery Configuration -->
+		<script type="text/javascript" src="/ControlCenter/resources/scripts/simpla.jquery.configuration.js"></script>
+		<!-- Facebox jQuery Plugin -->
+		<script type="text/javascript" src="/ControlCenter/resources/scripts/facebox.js"></script>
+		<script type="text/javascript" src="/ControlCenter/resources/scripts/class.ui.js"></script>
+		<script type="text/javascript" src="/ControlCenter/resources/scripts/web/common.js"></script>
+	</head>	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+				<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+			<h1 id="sidebar-title"><a href="#">后台管理菜单</a></h1>
+			<!-- Logo (221px wide) -->
+			<a href="#"><img id="logo" src="/ControlCenter/resources/images/logo.png" alt="后台管理菜单" /></a>
+			<!-- Sidebar Profile links -->
+			<div id="profile-links">
+				欢迎回来，<a href="#" title="johnnyeven">johnnyeven</a><br />
+				您有 <a href="#messages" rel="modal" title="0 条短消息">0 条短消息</a><br /><br />
+				<a href="#" title="查看网站">查看网站</a> | <a href="/ControlCenter/login/out" title="退出登录">退出登录</a>
+			</div>
+			<div id="profile-links">
+            <form action="/ControlCenter/api/general_api/changePlatform" method="post" id="platform" name="platform">
+                <select name="platformId" id="platformId" onchange="platform.submit();">
+                	<option value="0">选择其他管理平台</option>
+                                        <option value="1">切换到网站管理中心</option>
+                                        <option value="2">切换到报表中心</option>
+                                        <option value="3">切换到运维中心</option>
+                                    </select>
+            </form>
+			</div>
+			<ul id="main-nav">  <!-- Accordion Menu -->
+                <li><a href="" title="" class="nav-top-item">常规管理</a>
+                	<ul>
+                    	<li><a href="/ControlCenter/operation/index" title="运维管理中心首页" class="current">运维管理中心首页</a></li>                    </ul>
+                </li>
+				<li><a href="#" class="nav-top-item">营销策略管理</a>
+					<ul>
+                    	<li><a href="/ControlCenter/operation/coupons" title="打折信息管理">打折信息管理</a></li>                        <li><a href="/ControlCenter/operation/surveys" title="调查问卷管理">调查问卷管理</a></li>                        <li><a href="/ControlCenter/operation/survey_adds" title="新建调查问卷">新建调查问卷</a></li>                    	<li><a href="/ControlCenter/operation/survey_templates" title="调查问卷模板管理">调查问卷模板管理</a></li>                    	<li><a href="/ControlCenter/operation/services" title="服务包信息管理">服务包信息管理</a></li>					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-top-item">产品信息管理</a>
+					<ul>
+                    	<li><a href="/ControlCenter/operation/products" title="产品管理">产品管理</a></li>                    	<li><a href="/ControlCenter/operation/functions" title="产品功能管理">产品功能管理</a></li>					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-top-item">激活信息管理</a>
+					<ul>
+                    	<li><a href="/ControlCenter/operation/licenses" title="激活码管理">激活码管理</a></li>                    	<li><a href="/ControlCenter/operation/blacklists" title="黑名单管理">黑名单管理</a></li>					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-top-item">系统工具</a>
+					<ul>
+                    	<li><a href="/ControlCenter/tool/caches" title="重建缓存">重建缓存</a></li>					</ul>
+				</li>
+				<li>
+					<a href="#" class="nav-top-item">系统设置</a>
+					<ul>
+                    	<li><a href="/ControlCenter/web/notices" title="内部通知管理">内部通知管理</a></li>                    	<li><a href="/ControlCenter/web/settings" title="系统配置">系统配置</a></li>                    	<li><a href="/ControlCenter/web/settings_action" title="编辑系统配置">编辑系统配置</a></li>                    	<li><a href="/ControlCenter/web/users" title="管理员设置">管理员设置</a></li>                    	<li><a href="/ControlCenter/web/permissions" title="权限设置">权限设置</a></li>                    	<li><a href="/ControlCenter/web/permissions_action" title="添加权限">添加权限</a></li>					</ul>
+				</li>
+			</ul> <!-- End #main-nav -->
+			<div id="messages" style="display: none"> <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+				<h3>您有 0 条新短消息</h3>
+                <div class="notice-container">
+					                </div>
+				<form action="" method="post">
+                	<fieldset>
+					<h4>发送短消息</h4>
+					<p>
+						<textarea class="textarea" name="noticeContent" id="noticeContent" cols="79" rows="5"></textarea>
+                        <input name="GUID" type="hidden" id="GUID" value="B24D77A7-0ADF-7629-FA8A-505B6203E249" />
+					</p>
+					<p>
+						<select name="noticeReciever" id="noticeReciever">
+							<option value="all">全体管理员</option>
+                                                                                    					  </select>
+					  <input class="noticeSendBtn button" type="button" value="发送" />
+					</p>
+                    </fieldset>
+				</form>
+			</div> <!-- End #messages -->
+		</div></div> <!-- End #sidebar -->
+				<div id="main-content"> <!-- Main Content Section with everything -->
+			
+			<noscript> <!-- Show a notification if the user has disabled javascript -->
+				<div class="notification error png_bg">
+					<div>
+						Javascript is disabled or is not supported by your browser. Please <a href="http://browsehappy.com/" title="Upgrade to a better browser">upgrade</a> your browser or <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="Enable Javascript in your browser">enable</a> Javascript to navigate the interface properly.
+					Download From <a href="http://www.exet.tk">exet.tk</a></div>
+				</div>
+			</noscript>
+			
+			<!-- Page Head -->
+			<h2>欢迎回来，johnnyeven</h2>
+			<p id="page-intro">你想做什么？</p>
+			
+			<ul class="shortcut-buttons-set">
+				
+				<li><a class="shortcut-button" href="/ControlCenter/operation/surveys"><span>
+					<img src="/ControlCenter/resources/images/icons/Clipboard_3.png" alt="icon" /><br />
+					调查问卷管理
+				</span></a></li>
+				
+				<li><a class="shortcut-button" href="/ControlCenter/operation/blacklists"><span>
+					<img src="/ControlCenter/resources/images/icons/User_Danger.png" alt="icon" /><br />
+					黑名单管理
+				</span></a></li>
+				
+				<li><a class="shortcut-button" href="/ControlCenter/operation/products"><span>
+					<img src="/ControlCenter/resources/images/icons/Box_Recycle.png" alt="icon" /><br />
+					产品管理
+				</span></a></li>
+				
+				<li><a class="shortcut-button" href="/ControlCenter/operation/licenses"><span>
+					<img src="/ControlCenter/resources/images/icons/Lock.png" alt="icon" /><br />
+					激活码管理
+				</span></a></li>
+				
+				<li><a class="shortcut-button" href="#messages" rel="modal"><span>
+					<img src="/ControlCenter/resources/images/icons/Mail_new.png" alt="icon" /><br />
+					消息通知
+				</span></a></li>
+				
+			</ul><!-- End .shortcut-buttons-set -->
+			<div class="clear"></div> <!-- End .clear -->
+			
+			<div class="content-box"><!-- Start Content Box -->
+				<div class="content-box-header">
+					<h3>运维管理中心总体数据统计</h3>
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+				  <div class="tab-content default-tab"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+				  </div>
+				</div> <!-- End .content-box-content -->
+			</div> <!-- End .content-box -->
+            
+			<div class="content-box">
+				<div class="content-box-header">
+					<h3>运维管理中心更新日志</h3>
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					<div class="tab-content default-tab">
+						<h4>2011-07-04</h4>
+						<p><ul class="list">
+                            <li>新增注册码查询，可查询注册码被使用多少次，按照使用类型排序</li>
+                            <li>新增CPU码查询功能</li>
+                        </ul></p>
+						<h4>2011-07-13</h4>
+						<p><ul class="list">
+                            <li><span style="color:#FF0000">首页报表数据已增加自动统计功能，将于美国时间00:00、00:05、00:10分别进行All, Cpu, Product数据统计工作</span></li>
+                            <li><span style="color:#FF0000">若想立即查看数据，请重建缓存，由于此操作耗时长，不建议频繁进行。</span></li>
+                            <li><a href="/ControlCenter/tool/caches">重建缓存</a></li>
+                        </ul></p>
+					</div> <!-- End #tab3 -->
+				</div> <!-- End .content-box-content -->
+			</div> <!-- End .content-box -->
+			<div class="clear"></div>
+            
+						<div id="footer">
+				<small> <!-- Remove this notice or replace it with whatever you want -->
+						&#169; Copyright 2009-2011 Digiarty | 由 <a href="http://codeigniter.org.cn/" target="_blank">CodeIgniter</a> PHP框架驱动 | <a href="#">回顶部</a>
+				</small>
+			</div><!-- End #footer -->		</div>
+<script language="javascript" src="/ControlCenter/resources/scripts/report/index.js"></script> <!-- End #main-content -->
+	</div></body>
+
+<!-- Download From www.exet.tk-->
+</html>

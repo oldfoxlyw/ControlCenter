@@ -1,0 +1,6 @@
+.prompt_container img {border:0;}
+.prompt_mask, .prompt_container {position:absolute;top:0;left:0;}
+.prompt_container {padding:10px;background:#666666;}
+.prompt_content {position:relative;background:#fff;}
+.prompt_close_btn {display:block;position:absolute;}
+.prompt_content_single {padding:10px;}
