@@ -16,7 +16,7 @@ date_default_timezone_set('PRC');
 |
 */
 $config['base_domain'] = 'http://www.datacenter-digiarty.com';
-$config['base_url']	= 'http://www.datacenter-digiarty.com/ControlCenter/';
+$config['base_url']	= '';
 $config['root_path'] = '/ControlCenter/';
 $config['upload_dir'] = 'resources/uploaded';
 $config['upload_ads_dir'] = 'resources/uploaded/ads';

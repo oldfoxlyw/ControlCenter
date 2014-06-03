@@ -23,7 +23,7 @@ class Mysql {
             }
         } else {
             if(!$this->link = mysql_connect($param['dbhost'], $param['dbuser'], $param['dbpw'])) {
-                $this->halt('Can not connect to MySQL server');
+                $this->halt(mysql_error());
             }
         }
         if($this->version() > '4.1') {

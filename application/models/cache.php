@@ -338,7 +338,7 @@ class Cache extends CI_Model {
 	}
 	
 	public function buildLogDbName() {
-		$db_prefix = 'tdatctsc_scc_logdb';
+		$db_prefix = 'datadigi_scc_logdb';
 		$this->load->dbutil();
 		$dbList = $this->dbutil->list_databases();
 		$this->cacheData .= "\$config['logdb_names_list'] = array(\n";
