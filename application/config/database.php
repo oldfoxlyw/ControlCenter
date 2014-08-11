@@ -169,5 +169,21 @@ $db['promotiondb']['swap_pre'] = '';
 $db['promotiondb']['autoinit'] = TRUE;
 $db['promotiondb']['stricton'] = FALSE;
 
+$db['pingdb']['hostname'] = 'localhost';
+$db['pingdb']['username'] = 'datadigi';
+$db['pingdb']['password'] = 'DaTa743HIOildew';
+$db['pingdb']['database'] = 'datadigi_pinglog';
+$db['pingdb']['dbdriver'] = 'mysql';
+$db['pingdb']['dbprefix'] = '';
+$db['pingdb']['pconnect'] = FALSE;
+$db['pingdb']['db_debug'] = TRUE;
+$db['pingdb']['cache_on'] = FALSE;
+$db['pingdb']['cachedir'] = '';
+$db['pingdb']['char_set'] = 'utf8';
+$db['pingdb']['dbcollat'] = 'utf8_general_ci';
+$db['pingdb']['swap_pre'] = '';
+$db['pingdb']['autoinit'] = TRUE;
+$db['pingdb']['stricton'] = FALSE;
+
 /* End of file database.php */
 /* Location: ./application/config/database.php */
