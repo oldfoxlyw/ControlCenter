@@ -11,10 +11,10 @@ class Ping extends CI_Controller
 	
 	public function log()
 	{
+		$posts = $this->input->get_post();
 		$device_id = $this->input->get_post('id', TRUE);
 		$device = $this->input->get_post('type', TRUE);
 		$os_version = $this->input->get_post('version', TRUE);
-		$value = $this->input->get_post('value', TRUE);
 
 		if(empty($device_id))
 		{
@@ -24,7 +24,7 @@ class Ping extends CI_Controller
 			$device_id = $inputParam->id;
 			$device = $inputParam->type;
 			$os_version = $inputParam->version;
-			$value = $inputParam->value;
+			$posts = $inputParam;
 		}
 
 		if(!empty($device_id) && !empty($value))
@@ -35,7 +35,7 @@ class Ping extends CI_Controller
 				'device'		=>	empty($device) ? '' : $device,
 				'os_version'	=>	empty($os_version) ? '' : $os_version,
 				'device_id'		=>	$device_id,
-				'value'			=>	$value
+				'value'			=>	json_encode($posts)
 			);
 			$this->mpinglog->create($parameter);
 		}
