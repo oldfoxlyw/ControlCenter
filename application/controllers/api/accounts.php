@@ -11,6 +11,38 @@ class Accounts extends CI_Controller {
 		$this->load->model('report/account', 'account');
 		$this->load->model('logs', 'logs');
 	}
+
+	public function email()
+	{
+		$software = $this->input->post('software', TRUE);
+		$email = $this->input->post('email', TRUE);
+		if(!empty($email))
+		{
+			$this->load->model('memail');
+			$parameter = array(
+				'software'	=>	$software,
+				'email'		=>	$email,
+				'time'		=>	time()
+			);
+			$this->memail->create($parameter);
+		}
+	}
+
+	public function submit_email()
+	{
+		$name = $this->input->post('name', TRUE);
+		$email = $this->input->post('email', TRUE);
+		if(!empty($email))
+		{
+			$this->load->model('memailsubmit');
+			$parameter = array(
+				'name'		=>	$name,
+				'email'		=>	$email,
+				'time'		=>	time()
+			);
+			$this->memailsubmit->create($parameter);
+		}
+	}
 	
 	public function register() {
 		$email			=	trim($this->input->get_post('email', TRUE));

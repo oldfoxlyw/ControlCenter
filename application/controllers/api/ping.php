@@ -11,23 +11,18 @@ class Ping extends CI_Controller
 	
 	public function log()
 	{
-		$posts = $this->input->get_post();
-		$device_id = $this->input->get_post('id', TRUE);
-		$device = $this->input->get_post('type', TRUE);
-		$os_version = $this->input->get_post('version', TRUE);
+		$raw_post_data = file_get_contents('php://input', 'r');
+		$inputParam = json_decode($raw_post_data);
 
-		if(empty($device_id))
-		{
-			$raw_post_data = file_get_contents('php://input', 'r');
-			$inputParam = json_decode($raw_post_data);
+		$device_id = $inputParam->id;
+		$device = $inputParam->type;
+		$os_version = $inputParam->version;
+		unset($inputParam->id);
+		unset($inputParam->type);
+		unset($inputParam->version);
+		$posts = $inputParam;
 
-			$device_id = $inputParam->id;
-			$device = $inputParam->type;
-			$os_version = $inputParam->version;
-			$posts = $inputParam;
-		}
-
-		if(!empty($device_id) && !empty($value))
+		if(!empty($device_id) && !empty($device))
 		{
 			$this->load->model('mpinglog');
 
@@ -35,7 +30,8 @@ class Ping extends CI_Controller
 				'device'		=>	empty($device) ? '' : $device,
 				'os_version'	=>	empty($os_version) ? '' : $os_version,
 				'device_id'		=>	$device_id,
-				'value'			=>	json_encode($posts)
+				'value'			=>	json_encode($posts),
+				'time'			=>	time()
 			);
 			$this->mpinglog->create($parameter);
 		}
